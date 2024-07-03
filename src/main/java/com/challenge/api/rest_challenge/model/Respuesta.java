@@ -30,6 +30,7 @@ public class Respuesta {
     private Usuario usuario;
 
     @ManyToOne
+    @JoinColumn(name = "id_topico")
     private Topico topico;
 
 
