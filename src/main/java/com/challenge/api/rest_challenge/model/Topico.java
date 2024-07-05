@@ -1,6 +1,8 @@
 package com.challenge.api.rest_challenge.model;
 
+import com.challenge.api.rest_challenge.dto.ActualizarTopicoDTO;
 import com.challenge.api.rest_challenge.dto.IngresarTopicoDTO;
+import com.challenge.api.rest_challenge.dto.TopicoDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -77,5 +79,20 @@ public class Topico {
 
     public void setCurso(Curso curso) {
         this.curso = curso;
+    }
+
+    public void desactivarTopico(){
+        this.status = false;
+    }
+    
+    public void actualizarTopico(ActualizarTopicoDTO topicoActualizar){
+        if (topicoActualizar.titulo() != null) {
+            this.titulo = topicoActualizar.titulo();
+        }
+
+        if (topicoActualizar.mensaje() != null) {
+            this.mensaje = topicoActualizar.mensaje();
+        }
+
     }
 }

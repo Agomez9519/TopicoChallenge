@@ -1,4 +1,7 @@
 package com.challenge.api.rest_challenge.dto;
 
-public record IngresarTopicoDTO(String titulo, String mensaje, Long idUsuario, Long idCurso ) {
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+public record IngresarTopicoDTO(@NotBlank String titulo, @NotBlank String mensaje, @NotNull Long idUsuario, @NotNull Long idCurso ) {
 }
